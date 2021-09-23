@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body class="container">
+<div class="row">
+<div class="col-12">
+<table class="table table-hover" >
+<thead>
+<tr>
+<th>Id</th>
+<th>Nombre</th>
+<th>Existencias</th>
+<th>Editar</th>
+<th>Borrar</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="juego :${listaJuegos}">
+<td th:text="${juego.id}"></td>
+<td th:text="${juego.nombre}"></td>
+<td th:text="${juego.existencias}"></td>
+<td><button class="btn btn-primary"><a class="text-white" th:href="@{/editarJuego/{id}(id=${juego.id})}">Editar</a></button></td>
+<td><button class="btn btn-danger"><a class="text-white" th:href="@{/borrarJuego/{id}(id=${juego.id})}">Borrar</a></button></td>
+</tr>
+</tbody>
+
+</table>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+</head>
+<body class="container">
+	<div class="row">
+		<div class="col-12">
+			<form action="#" th:action="@{/postAgregarJuego}"
+				th:object="${juego}" method="post">
+				<div class="form-group d-none">
+					<label>Id</label> <input type="text" th:field="*{id}">
+				</div>
+				<div class="form-group">
+					<label>Nombre</label> <input type="text" th:field="*{nombre}">
+				</div>
+				<div class="form-group">
+					<label>Existencias</label> <input type="number"
+						th:field="*{existencias}">
+					<ul style="list-style: none">
+						<li th:each="err : ${#fields.errors('nombre')}" th:text="${err}" />
+					</ul>
+				</div>
+
+				<div class="form-group">
+
+					<input type="submit" value="Añadir" class="btn btn-success mt-2">
+
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

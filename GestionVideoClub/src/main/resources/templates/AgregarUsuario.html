@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+</head>
+<body class="container">
+	<div class="row">
+		<div class="col-12">
+			<form action="#" th:action="@{/postAgregarUsuario}"
+				th:object="${usuario}" method="post">
+				<div class="form-group d-none">
+					<label>Id</label> <input type="text" th:field="*{id}">
+				</div>
+				<div class="form-group">
+					<label>Nombre</label> <input type="text" th:field="*{nombre}">
+				</div>
+				<div class="form-group">
+					<label>Apellido</label> <input type="text" th:field="*{apellido}">
+				</div>
+				<div class="form-group">
+					<label>Telefono</label> <input type="number" th:field="*{telefono}">
+				</div>
+				<div class="form-group">
+					<label>Rol</label>
+					<select th:field="*{rol}">
+					<option th:text="Administrador" th:value="admin"></option>
+					<option th:text="Cliente" th:value="client"></option>
+					</select>
+				</div>
+				<div class="form-group">
+						
+						<input type="submit" value="Añadir" class="btn btn-success mt-2">
+					
+	   </div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
